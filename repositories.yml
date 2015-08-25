@@ -1,0 +1,8 @@
+#- url: catalog-test-content:test-user/foo
+  
+#- github:user/repo
+
+- url: https://github.com/mikezaccardo/test-blueprint
+#  name: folder
+#  owner: user
+
