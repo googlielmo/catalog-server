@@ -32,7 +32,7 @@ public class RepositoryLinkList {
         String repoUrl = config.getRepositoriesUrl();
         try {
             if (repoUrl==null) throw new IllegalStateException("No URL defined");
-            content = Streams.readFullyString(new URL(repoUrl).openStream());
+            content = Streams.readFullyString(Utils.getGitHubUrl(new URL(repoUrl)).openStream());
         } catch (Exception e) {
             Exceptions.propagateIfFatal(e);
             throw new IllegalStateException("Invalid URL for repository: "+repoUrl, e);

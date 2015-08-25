@@ -6,7 +6,8 @@ import org.eclipse.jetty.servlet.ServletContextHandler;
 
 public class CatalogServerConfig {
 
-    public static String DEFAULT_REPOSITORIES_URL = "http://github.com/brooklyncentral/public-catalog-data/";
+	// http://github.com/brooklyncentral/public-catalog-data/
+    public static String DEFAULT_REPOSITORIES_URL = "https://raw.githubusercontent.com/mikezaccardo/brooklyn-community-catalog-test/master/repositories.yml";
     String repositoriesUrl;
     
     public static CatalogServerConfig newDefault() {

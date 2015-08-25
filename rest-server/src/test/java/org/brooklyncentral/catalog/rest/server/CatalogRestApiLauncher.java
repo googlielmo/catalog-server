@@ -262,6 +262,7 @@ public class CatalogRestApiLauncher {
         });
     }
 
+    
     public static void main(String[] args) throws Exception {
         // TODO accept "--live" to use the GitHub endpoint; right now local is hard-coded
         startRestResourcesViaFilter(newTestContentServerConfig());
@@ -269,9 +270,9 @@ public class CatalogRestApiLauncher {
     }
 
     public static CatalogServerConfig newTestContentServerConfig() {
-        supportTestContentResolution();
-        CatalogServerConfig config = CatalogServerConfig.newDefault();
-        config.setRepositoriesUrl("catalog-test-content:repositories.yml");
+//        supportTestContentResolution();
+    	CatalogServerConfig config = CatalogServerConfig.newDefault();
+//        config.setRepositoriesUrl("catalog-test-content:repositories.yml");
         return config;
     }
 
