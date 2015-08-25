@@ -1,6 +1,9 @@
 package org.brooklyncentral.catalog.model;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLConnection;
 import java.util.Map;
 
 import org.apache.brooklyn.util.exceptions.Exceptions;
@@ -31,14 +34,15 @@ public class Repository {
 
     private String readRepoFile(String subPath) {
         try {
-            return Streams.readFullyString(new URL(Urls.mergePaths(baseUrl, subPath)).openStream());
+            URL url = Utils.getGitHubUrl(new URL(Urls.mergePaths(baseUrl, subPath)));
+			return Streams.readFullyString(url.openStream());
         } catch (Exception e) {
             Exceptions.propagateIfFatal(e);
             throw Exceptions.propagate(new IllegalStateException("Unable to read "+link+": "+e, e));
         }
     }
     
-    @SuppressWarnings("unchecked")
+	@SuppressWarnings("unchecked")
     private Map<String, Object> parseBom() {
         // TODO tie in with logic elsewhere
         return (Map<String,Object>)Yamls.parseAll(catalogBomString).iterator().next();
