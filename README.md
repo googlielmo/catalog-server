@@ -81,4 +81,4 @@ Longer term:
 * Let brooklyn integrate with online catalogs
 
 
-(much more in my notes
+(much more in my notes)
